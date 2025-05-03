@@ -171,3 +171,44 @@ header h1 {
 .btn-submit:hover {
     background-color: #0056b3;
 }
+
+/*
+    AÑADIDOS PARA EL QR
+*/
+/* Bienvenida */
+#welcome-container {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f5f9ff;
+    border: 2px dashed #007BFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  #welcome-container:hover {
+    transform: translateY(-3px);
+  }
+  #welcome-container h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  #welcome-container .btn-submit {
+    margin-top: 15px;
+  }
+  
+  /* Ajustes al reader-wrapper */
+  #reader-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #reader {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  #result h2 {
+    color: green;
+  }
+  
