@@ -212,3 +212,67 @@ header h1 {
     color: green;
   }
   
+  /*--------------------------------*/
+  /* Contenedores de login y register */
+#login-container,
+#register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #f5f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Imagen superior */
+#login-container img,
+#register-container img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Form-groups */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botones */
+.btn-submit {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Enlaces */
+.redirect-link {
+  margin-top: 10px;
+  display: block;
+  color: #007BFF;
+  text-decoration: none;
+}
+.redirect-link:hover {
+  text-decoration: underline;
+}
