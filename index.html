@@ -1,65 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
-
-    <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
-
-    <style>
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #reader {
-            width: 600px;
-        }
-        #result {
-            text-align: center;
-            font-size: 1.5rem;
-        }
-    </style>
-    
-   
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
-
 <body>
-
-    <main>
-        <div id="reader"></div>
-        <div id="result"></div>
-    </main>
-        
-    <script>
-        const scanner= new Html5QrcodeScanner('reader',{
-            qrbox:{
-                width: 250,
-                height: 250,
-            },
-            fps:20,
-        });
-
-        scanner.render(success, error);
-
-        function success(result){
-            document.getElementById('result').innerHTML = `
-            <h2>Success!</h2>
-            <p><a href="${result}">${result}</a></p>
-            `;
-            // Prints result as a link inside result element
-
-            scanner.clear();
-            document.getElementById('reader').remove();
-        }
-
-        function error(err){
-            console.error(err);
-        }
-    </script>
-
     
+    <!-- Header con botón de menú -->
+    <header>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <h1>Torneo Rubik</h1>
+    </header>
+    
+    <!-- Menú lateral (drawer) -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="bases.html">Bases</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+            <li><a href="reglas.html">Reglas</a></li>
+
+        </ul>
+    </nav>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="container">
+            <h1><span style="color: #3ca2f5;"><strong>BIENVENIDO AL TORNEO:</strong></span></h1>
+            <img src="img/rubik-armado.gif" class="gif" alt="rubik-armado" loading="lazy">
+            <p>Participa en el evento y demuestra tus habilidades con el cubo Rubik.</p>
+        </div>
+    </main>
+    
+    <!-- Botón flotante -->
+    <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light mt-auto">
+        <p>&copy; Mauricio Gonzalez Torres</p>
+        <div>
+            <a href="#" class="me-3"><img src="img/facebook-icon.png" alt="Facebook" width="24"></a>
+            <a href="#" class="me-3"><img src="img/twitter-icon.png" alt="Twitter" width="24"></a>
+            <a href="#" class="me-3"><img src="img/gmail-icon.png" alt="Google" width="24"></a>
+        </div>
+    </footer>
 </body>
 </html>

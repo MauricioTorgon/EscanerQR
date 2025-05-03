@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas del Concurso</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Header con botón de menú -->
+    <header>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <h1>Torneo de Rubick</h1>
+    </header>
+
+    <!-- Menú lateral (drawer) -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="bases.html">Bases</a></li>
+            <li><a href="resenas.html">Reseñas</a></li>
+            <li><a href="reglas.html" class="active">Reglas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="container">
+            <h1><span style="color: #3ca2f5;"><strong>REGLAS DEL CONCURSO:</strong></span></h1>
+
+            <!-- Video de YouTube -->
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/gh8HX4itF_w?si=mT9wnhChYVmMKejR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <!-- Lista de reglas -->
+            <ul class="list-group">
+                <li class="list-group-item">1. El concursante entregará el cubo al juez.</li>
+                <li class="list-group-item">2. El juez mezclará el cubo con 15 movimientos aleatorios.</li>
+                <li class="list-group-item">3. Inspección de 15 segundos antes de comenzar.</li>
+                <li class="list-group-item">4. El tiempo máximo para resolver es de 3 minutos.</li>
+                <li class="list-group-item">5. Se toman tres tiempos y se elige el mejor.</li>
+                <li class="list-group-item">6. Si el concursante no comienza en 10 segundos será descalificado.</li>
+                <li class="list-group-item">7. Si el armado del cubo excede los 3 minutos se da por terminado ese intento.</li>
+                <li class="list-group-item">8. Cada jugador armará el cubo tres veces consecutivas y se tomará el menor tiempo de armado.</li>
+                <li class="list-group-item">9. En caso de empate, se dará otra oportunidad que será definida por el jurado.</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Botón flotante -->
+    <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light mt-auto">
+        <p>&copy; Mauricio Gonzalez Torres</p>
+        <div>
+            <a href="#" class="me-3"><img src="img/facebook-icon.png" alt="Facebook" width="24"></a>
+            <a href="#" class="me-3"><img src="img/twitter-icon.png" alt="Twitter" width="24"></a>
+            <a href="#" class="me-3"><img src="img/gmail-icon.png" alt="Google" width="24"></a>
+        </div>
+    </footer>
+</body>
+</html>
