@@ -27,7 +27,7 @@ function registerUser(event) {
     localStorage.setItem('users', JSON.stringify(users));
   
     alert('Registro exitoso. Ahora puedes iniciar sesión.');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }
   
 // Login: comprueba credenciales o redirige a registro
@@ -41,10 +41,9 @@ function loginUser(event) {
   
     if (user) {
       alert(`¡Bienvenido, ${user.fullname}!`);
-      window.location.href = 'dashboard.html';
+      window.location.href = 'bienvenida.html.html';
     } else {
-      alert('Usuario o contraseña incorrectos. Si no estás registrado, serás redirigido.');
-      window.location.href = 'register.html';
+      alert('Usuario o contraseña incorrectos.');
     }
   }
   

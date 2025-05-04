@@ -11,34 +11,27 @@
 </head>
 <body>
     
-    <!-- Header con botón de menú -->
-    <header>
-        <button id="menu-toggle" class="menu-button">☰</button>
-        <h1>Torneo Rubik</h1>
-    </header>
-    
-    <!-- Menú lateral (drawer) -->
-    <nav id="sidebar" class="sidebar">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="bases.html">Bases</a></li>
-            <li><a href="resenas.html">Reseñas</a></li>
-            <li><a href="reglas.html">Reglas</a></li>
 
-        </ul>
-    </nav>
-    
     <!-- Contenido principal -->
     <main class="main-content">
-        <div class="container">
-            <h1><span style="color: #3ca2f5;"><strong>BIENVENIDO AL TORNEO:</strong></span></h1>
-            <img src="img/rubik-armado.gif" class="gif" alt="rubik-armado" loading="lazy">
-            <p>Participa en el evento y demuestra tus habilidades con el cubo Rubik.</p>
-        </div>
+        <div id="login-container">
+            <img src="img/login.jpg" alt="Login">
+            <h2>Accede a tu cuenta</h2>
+            <form id="login-form">
+              <div class="form-group">
+                <label for="log-username">Usuario</label>
+                <input type="text" id="log-username" required>
+              </div>
+              <div class="form-group">
+                <label for="log-password">Contraseña</label>
+                <input type="password" id="log-password" required>
+              </div>
+              <button type="submit" class="btn-submit">Iniciar sesión</button>
+            </form>
+            <a href="register.html" class="redirect-link">¿No estás registrado? Regístrate aquí</a>
+          </div>
     </main>
     
-    <!-- Botón flotante -->
-    <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
     <!-- Footer -->
     <footer class="text-center py-3 bg-light mt-auto">
         <p>&copy; Mauricio Gonzalez Torres</p>
@@ -48,5 +41,7 @@
             <a href="#" class="me-3"><img src="img/gmail-icon.png" alt="Google" width="24"></a>
         </div>
     </footer>
+    <script src="js/auth.js"></script>
 </body>
 </html>
+

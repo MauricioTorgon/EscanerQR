@@ -1,5 +1,5 @@
 document.getElementById('start-scan').addEventListener('click', () => {
-    // Ocultar bienvenida, mostrar lector
+    // Ocultar bienvenida.html, mostrar lector
     document.getElementById('welcome-container').style.display = 'none';
     document.getElementById('reader-wrapper').style.display = 'flex';
   
