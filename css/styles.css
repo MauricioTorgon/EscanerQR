@@ -67,14 +67,22 @@ header h1 {
 }
 
 .sidebar a {
-    color: rgb(16, 99, 223);
+    color: #1063df;
     text-decoration: none;
     display: block;
     transition: background 0.3s;
 }
 
 .sidebar a:hover {
-    background: #beb9b981;
+    background: #7a7979;
+}
+
+/* Estilos para las imágenes del menú */
+.menu-img {
+  width: 20px; /* Ajusta según necesites */
+  height: 20px; /* Mantener relación de aspecto */
+  margin-right: 15px;
+  object-fit: contain; /* Para mantener proporciones */
 }
 
 /* Contenido principal */
