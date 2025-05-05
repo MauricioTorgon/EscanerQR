@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi QR</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+
+  <!-- Header con botón de menú -->
+  <header>
+    <button id="menu-toggle" class="menu-button">☰</button>
+    <h1>Mi Código QR</h1>
+  </header>
+
+  <!-- Menú lateral (drawer) -->
+  <nav id="sidebar" class="sidebar">
+    <img src="img/sidebar/controlAsistencia.png" alt="Torneo de Rubick" class="sideimg">
+    <ul>
+      <li><a href="bienvenida.html"><img src="img/sidebar/home-icon.png" class="menu-img">Inicio</a></li>
+      <li><a href="preparaQR.html"><img src="img/sidebar/scanqr-icon.png" class="menu-img">Escanear QR</a></li>
+      <li><a href="asistencias.html"><img src="img/sidebar/asistencias-icon.png" class="menu-img">Asistencias</a></li>
+      <li><a href="generarQR.html"><img src="img/sidebar/qr-icon.png" class="menu-img">Mi QR</a></li>
+      <li><a href="#" id="logout-link"><img src="img/sidebar/logout-icon.png" alt="Salir" class="menu-img">Salir</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <div class="container text-center mt-4">
+      <h2 class="mb-3">Tu código QR</h2>
+      <canvas id="qr-canvas"></canvas>
+      <p id="user-info" class="mt-3 fw-bold"></p>
+    </div>
+  </main>
+
+  <!-- Botón flotante -->
+  <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-light mt-auto">
+    <p>&copy; Mauricio Gonzalez Torres</p>
+    <div>
+      <a href="#"><img src="img/facebook-icon.png" alt="Facebook" width="24" class="me-3"></a>
+      <a href="#"><img src="img/twitter-icon.png" alt="Twitter" width="24" class="me-3"></a>
+      <a href="#"><img src="img/gmail-icon.png" alt="Google" width="24" class="me-3"></a>
+    </div>
+  </footer>
+
+  <!-- QR Generator -->
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  <script>
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUser = users[users.length - 1]; // Último registrado
+
+    if (currentUser) {
+      document.getElementById('user-info').textContent = `Username: ${currentUser.username}`;
+      const qr = new QRious({
+        element: document.getElementById('qr-canvas'),
+        value: currentUser.username,
+        size: 250,
+      });
+    } else {
+      document.getElementById('user-info').textContent = "⚠️ No hay usuario registrado.";
+    }
+  </script>
+  <!-- Logout de la pagina-->
+  <script>
+    document.getElementById('logout-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (confirm("¿Estás seguro de que quieres salir?")) {
+      window.location.href = "index.html";
+    }
+  });
+  </script>
+</body>
+</html>
