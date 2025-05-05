@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escaneo de QR</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 <body>
-    
-    
-    <!-- Menú lateral (drawer) -->
-    <nav id="sidebar" class="sidebar">
-        <ul>
-            <li><a href="bienvenida.html">Inicio</a></li>
-            <li><a href="bases.html">Bases</a></li>
-            <li><a href="resenas.html">Reseñas</a></li>
-            <li><a href="reglas.html">Reglas</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Contenido principal -->
-        <!-- Header y sidebar iguales a tu ejemplo -->
-            <!-- Header con botón de menú -->
-    <header>
-        <button id="menu-toggle" class="menu-button">☰</button>
-        <h1>Torneo Rubik</h1>
-    </header>
-    
-        <nav class="sidebar" id="sidebar">…</nav>
-      
-        <!-- Contenido principal -->
-        <main class="main-content">
-          <!-- Paso 1: Contenedor de bienvenida.html -->
-          <div class="container" id="welcome-container">
-            <h2>Prepara para analizar el QR</h2>
-            <p>Pulsa el botón para iniciar la cámara y escanear tu código.</p>
-            <button class="btn-submit" id="start-scan">Iniciar escaneo</button>
-          </div>
-      
-          <!-- Paso 2: Escáner oculto inicialmente -->
-          <div id="reader-wrapper" style="display: none;">
-            <div id="reader"></div>
-            <div id="result"></div>
-          </div>
-        </main>
-      
-        <!-- FAB o footer igual al ejemplo -->
-        <button class="fab" id="action-button">+</button>
 
-        <footer class="text-center py-3 bg-light mt-auto">
-            <p>&copy; Mauricio Gonzalez Torres</p>
-            <div>
-                <a href="#" class="me-3"><img src="img/facebook-icon.png" alt="Facebook" width="24"></a>
-                <a href="#" class="me-3"><img src="img/twitter-icon.png" alt="Twitter" width="24"></a>
-                <a href="#" class="me-3"><img src="img/gmail-icon.png" alt="Google" width="24"></a>
-            </div>
-        </footer>
-      
-        <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
-        <script src="js/qr-script.js"></script>
-    
-    <!-- Botón flotante -->
-    <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
-    <!-- Footer -->
-    
+  <!-- Menú lateral (drawer) -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="bienvenida.html">Inicio</a></li>
+      <li><a href="bases.html">Bases</a></li>
+      <li><a href="resenas.html">Reseñas</a></li>
+      <li><a href="reglas.html">Reglas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <button id="menu-toggle" class="menu-button">☰</button>
+    <h1>Torneo Rubik</h1>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- Pantalla inicial -->
+    <div class="container" id="welcome-container">
+      <h2>Prepara para analizar el QR</h2>
+      <p>Pulsa el botón para iniciar la cámara y escanear tu código.</p>
+      <button class="btn-submit" id="start-scan">Iniciar escaneo</button>
+    </div>
+
+    <!-- Lector QR -->
+    <div id="reader-wrapper" style="display: none; flex-direction: column; align-items: center;">
+      <div id="reader"></div>
+      <div id="scan-message" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </main>
+
+  <!-- Botón flotante -->
+  <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-light mt-auto">
+    <p>&copy; Mauricio Gonzalez Torres</p>
+    <div>
+      <a href="#"><img src="img/facebook-icon.png" alt="Facebook" width="24" class="me-3" /></a>
+      <a href="#"><img src="img/twitter-icon.png" alt="Twitter" width="24" class="me-3" /></a>
+      <a href="#"><img src="img/gmail-icon.png" alt="Google" width="24" class="me-3" /></a>
+    </div>
+  </footer>
+
+  <!-- Librería del lector QR y script personalizado -->
+  <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+  <script src="js/qr-script.js"></script>
+
 </body>
 </html>
-  

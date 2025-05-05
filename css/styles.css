@@ -142,7 +142,7 @@ header h1 {
 /*Imagen del sidebar*/
 .sideimg{
   display: block; /* Asegura que el elemento respete los márgenes */
-  max-width: 40%; /* Evita que el gif se salga del contenedor */
+  max-width: 80%; /* Evita que el gif se salga del contenedor */
   height: auto; /* Mantiene la proporción */
   margin: 0 auto; /* Centra el gif horizontalmente*/
 
