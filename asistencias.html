@@ -1,36 +1,84 @@
-<main class="main-content">
-  <div class="container">
-    <h2>Asistencias Registradas</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Matrícula</th>
-          <th>Nombre</th>
-          <th>Fecha</th>
-          <th>Entrada</th>
-          <th>Salida</th>
-        </tr>
-      </thead>
-      <tbody id="tabla-asistencias"></tbody>
-    </table>
-  </div>
-</main>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    
+    <!-- Header con botón de menú -->
+    <header>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <h1>Control de Asistencia</h1>
+    </header>
+    
+    <!-- Menú lateral (drawer) -->
+    <nav id="sidebar" class="sidebar">
+        <img src="img/sidebar/controlAsistencia.png" alt="Torneo de Rubick" class="sideimg">
+        <ul>
+            <li><a href="bienvenida.html"><img src="img/sidebar/home-icon.png" alt="Home" class="menu-img"><span>Inicio</span></a></li>
+            <li><a href="preparaQR.html"><img src="img/sidebar/scanqr-icon.png" alt="Home" class="menu-img">Escanear QR</a></li>
+            <li><a href="asistencias.html"><img src="img/sidebar/asistencias-icon.png" alt="Home" class="menu-img">Asistencias</a></li>
+            <li><a href="reglas.html"><img src="img/sidebar/logout-icon.png" alt="Home" class="menu-img">Salir</a></li>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const registros = JSON.parse(localStorage.getItem('registros')) || [];
-  const tbody = document.getElementById('tabla-asistencias');
+        </ul>
+    </nav>
+    
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <div class="container">
+          <h1><span style="color: #3ca2f5;"><strong>BIENVENIDO</strong></span></h1>
+              <h2>Asistencias Registradas</h2>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Matrícula</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-asistencias"></tbody>
+              </table>
+      </div>
+    </main>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const registros = JSON.parse(localStorage.getItem('registros')) || [];
+              const tbody = document.getElementById('tabla-asistencias');
+            
+              registros.forEach(reg => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                  <td>${reg.matricula}</td>
+                  <td>${reg.nombre}</td>
+                  <td>${reg.fecha}</td>
+                  <td>${reg.entrada || ''}</td>
+                  <td>${reg.salida || ''}</td>
+                `;
+                tbody.appendChild(row);
+              });
+            });
+            </script>
+    
+    <!-- Botón flotante -->
+    <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light mt-auto">
+        <p>&copy; Mauricio Gonzalez Torres</p>
+        <div>
+            <a href="#" class="me-3"><img src="img/facebook-icon.png" alt="Facebook" width="24"></a>
+            <a href="#" class="me-3"><img src="img/twitter-icon.png" alt="Twitter" width="24"></a>
+            <a href="#" class="me-3"><img src="img/gmail-icon.png" alt="Google" width="24"></a>
+        </div>
+    </footer>
+</body>
+</html>
 
-  registros.forEach(reg => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${reg.matricula}</td>
-      <td>${reg.nombre}</td>
-      <td>${reg.fecha}</td>
-      <td>${reg.entrada || ''}</td>
-      <td>${reg.salida || ''}</td>
-    `;
-    tbody.appendChild(row);
-  });
-});
-</script>
