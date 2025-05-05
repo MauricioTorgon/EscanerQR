@@ -14,8 +14,8 @@
   <!-- Header con botón de menú -->
   <header>
     <button id="menu-toggle" class="menu-button">☰</button>
-    <h1>Mi Código QR</h1>
-  </header>
+    <h1>Control de Asistencia</h1>
+</header>
 
   <!-- Menú lateral (drawer) -->
   <nav id="sidebar" class="sidebar">
@@ -38,19 +38,6 @@
     </div>
   </main>
 
-  <!-- Botón flotante -->
-  <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
-
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-light mt-auto">
-    <p>&copy; Mauricio Gonzalez Torres</p>
-    <div>
-      <a href="#"><img src="img/facebook-icon.png" alt="Facebook" width="24" class="me-3"></a>
-      <a href="#"><img src="img/twitter-icon.png" alt="Twitter" width="24" class="me-3"></a>
-      <a href="#"><img src="img/gmail-icon.png" alt="Google" width="24" class="me-3"></a>
-    </div>
-  </footer>
-
   <!-- QR Generator -->
   <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
   <script>
@@ -68,6 +55,7 @@
       document.getElementById('user-info').textContent = "⚠️ No hay usuario registrado.";
     }
   </script>
+  
   <!-- Logout de la pagina-->
   <script>
     document.getElementById('logout-link').addEventListener('click', function(e) {

@@ -10,23 +10,24 @@
   <script src="js/script.js"></script>
 </head>
 <body>
+  <!-- Header con botón de menú -->
+  <header>
+    <button id="menu-toggle" class="menu-button">☰</button>
+    <h1>Control de Asistencia</h1>
+</header>
 
   <!-- Menú lateral (drawer) -->
   <nav id="sidebar" class="sidebar">
+    <img src="img/sidebar/controlAsistencia.png" alt="Torneo de Rubick" class="sideimg">
     <ul>
-      <li><a href="bienvenida.html">Inicio</a></li>
-      <li><a href="bases.html">Bases</a></li>
-      <li><a href="resenas.html">Reseñas</a></li>
-      <li><a href="reglas.html">Reglas</a></li>
+      <li><a href="bienvenida.html"><img src="img/sidebar/home-icon.png" class="menu-img">Inicio</a></li>
+      <li><a href="preparaQR.html"><img src="img/sidebar/scanqr-icon.png" class="menu-img">Escanear QR</a></li>
+      <li><a href="asistencias.html"><img src="img/sidebar/asistencias-icon.png" class="menu-img">Asistencias</a></li>
+      <li><a href="generarQR.html"><img src="img/sidebar/qr-icon.png" class="menu-img">Mi QR</a></li>
+      <li><a href="#" id="logout-link"><img src="img/sidebar/logout-icon.png" alt="Salir" class="menu-img">Salir</a></li>
     </ul>
   </nav>
-
-  <!-- Header -->
-  <header>
-    <button id="menu-toggle" class="menu-button">☰</button>
-    <h1>Torneo Rubik</h1>
-  </header>
-
+  
   <!-- Contenido principal -->
   <main class="main-content">
     <!-- Pantalla inicial -->
@@ -43,22 +44,18 @@
     </div>
   </main>
 
-  <!-- Botón flotante -->
-  <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
-
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-light mt-auto">
-    <p>&copy; Mauricio Gonzalez Torres</p>
-    <div>
-      <a href="#"><img src="img/facebook-icon.png" alt="Facebook" width="24" class="me-3" /></a>
-      <a href="#"><img src="img/twitter-icon.png" alt="Twitter" width="24" class="me-3" /></a>
-      <a href="#"><img src="img/gmail-icon.png" alt="Google" width="24" class="me-3" /></a>
-    </div>
-  </footer>
-
   <!-- Librería del lector QR y script personalizado -->
   <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
   <script src="js/qr-script.js"></script>
-
+  
+  <!-- Logout de la pagina-->
+  <script>
+    document.getElementById('logout-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (confirm("¿Estás seguro de que quieres salir?")) {
+      window.location.href = "index.html";
+    }
+  });
+  </script>
 </body>
 </html>
