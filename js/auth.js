@@ -41,7 +41,7 @@ function loginUser(event) {
   
     if (user) {
       alert(`¡Bienvenido, ${user.fullname}!`);
-      window.location.href = 'bienvenida.html.html';
+      window.location.href = 'bienvenida.html';
     } else {
       alert('Usuario o contraseña incorrectos.');
     }
