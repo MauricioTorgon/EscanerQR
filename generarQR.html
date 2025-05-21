@@ -38,30 +38,24 @@
 
 <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 <script>
+  // 1. Obtener usuario actual del localStorage
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   if (currentUser) {
+    // 2. Mostrar nombre de usuario
     document.getElementById('user-info').textContent = `Username: ${currentUser.username}`;
+    
+    // 3. Generar el código QR
     const qr = new QRious({
-      element: document.getElementById('qr-canvas'),
-      value: currentUser.username, // Aquí se genera el QR del usuario logueado
-      size: 250,
+      element: document.getElementById('qr-canvas'), // Dónde se dibuja
+      value: currentUser.username,                   // Datos a codificar
+      size: 250,                                     // Tamaño en píxeles
     });
   } else {
+    // 4. Mensaje si no hay sesión
     document.getElementById('user-info').textContent = "⚠️ No hay sesión iniciada.";
   }
 </script>
-
-  
-  <!-- Logout de la pagina-->
-  <script>
-    document.getElementById('logout-link').addEventListener('click', function(e) {
-    e.preventDefault();
-    if (confirm("¿Estás seguro de que quieres salir?")) {
-      window.location.href = "index.html";
-    }
-  });
-  </script>
 
 </body>
 </html>

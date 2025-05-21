@@ -109,7 +109,7 @@ header h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/*Estilo del GIF*/
+/*Estilo del IMG*/
 .gif {
     display: block; /* Asegura que el elemento respete los márgenes */
     max-width: 100%; /* Evita que el gif se salga del contenedor */

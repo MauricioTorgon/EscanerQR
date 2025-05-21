@@ -9,7 +9,7 @@ document.getElementById('start-scan').addEventListener('click', () => {
 
   scanner.render(handleScanSuccess, handleScanError);
 
-  // Lo guardamos global para poder pararlo después si quieres
+  // Lo guardamos global para poder pararlo después
   window.qrScanner = scanner;
 });
 
@@ -56,7 +56,7 @@ function handleScanSuccess(decodedText) {
 
   localStorage.setItem('registros', JSON.stringify(registros));
 
-  // Si quieres detener el escaneo después de leer:
+  // para detener el escaneo después de leer:
   window.qrScanner.clear();
 }
 

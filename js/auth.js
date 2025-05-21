@@ -4,7 +4,7 @@ const users = [];
 // Registro: crea un usuario y redirige a login
 function registerUser(event) {
   event.preventDefault();
-
+  //trim elimina espacios en blanco al inicio y final (me daba errores antes)
   const username  = document.getElementById('reg-username').value.trim();
   const matricula = document.getElementById('reg-matricula').value.trim();
   const fullname  = document.getElementById('reg-fullname').value.trim();
