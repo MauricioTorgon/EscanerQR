@@ -77,10 +77,6 @@ header h1 {
     background: #7a7979;
 }
 
-.sidebar li:empty {
-  display: none;
-}
-
 /* Estilos para las imágenes del menú */
 .menu-img {
   width: 20px; /* Ajusta según necesites */
@@ -113,28 +109,6 @@ header h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón flotante */
-.fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007BFF;
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.fab:hover {
-    background: #0056b3;
-    transform: scale(1.1);
-}
-
 /*Estilo del GIF*/
 .gif {
     display: block; /* Asegura que el elemento respete los márgenes */
@@ -152,31 +126,6 @@ header h1 {
 
 }
 
-/* Estilos para el formulario */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #007BFF;
-    outline: none;
-}
 
 .btn-submit {
     background-color: #007BFF;
