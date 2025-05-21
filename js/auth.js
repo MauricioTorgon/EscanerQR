@@ -3,32 +3,36 @@ const users = [];
 
 // Registro: crea un usuario y redirige a login
 function registerUser(event) {
-    event.preventDefault();
-    const username  = document.getElementById('reg-username').value.trim();
-    const matricula = document.getElementById('reg-matricula').value.trim();
-    const fullname  = document.getElementById('reg-fullname').value.trim();
-    const password  = document.getElementById('reg-password').value;
-  
-    if (!username || !matricula || !fullname || !password) {
-      alert('Por favor, completa todos los campos.');
-      return;
-    }
-  
-    // Obtener usuarios almacenados y convertirlos a objeto
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-  
-    if (users.find(u => u.username === username)) {
-      alert('El usuario ya existe. Elige otro nombre.');
-      return;
-    }
-  
-    // Guardar usuario en localStorage
-    users.push({ username, matricula, fullname, password });
-    localStorage.setItem('users', JSON.stringify(users));
-  
-    alert('Registro exitoso. Ahora puedes iniciar sesión.');
-    window.location.href = 'index.html';
+  event.preventDefault();
+
+  const username  = document.getElementById('reg-username').value.trim();
+  const matricula = document.getElementById('reg-matricula').value.trim();
+  const fullname  = document.getElementById('reg-fullname').value.trim();
+  const password  = document.getElementById('reg-password').value;
+
+  if (!username || !matricula || !fullname || !password) {
+    alert('Por favor, completa todos los campos.');
+    return;
   }
+
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  if (users.find(u => u.username === username)) {
+    alert('El usuario ya existe. Elige otro nombre.');
+    return;
+  }
+
+  //  Si el username es 'admin', se marcará como administrador
+  const isAdmin = username.toLowerCase() === 'admin';
+
+  // Guardar el usuario con isAdmin
+  users.push({ username, matricula, fullname, password, isAdmin });
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert('Registro exitoso. Ahora puedes iniciar sesión.');
+  window.location.href = 'index.html';
+}
+
   
 // Login: comprueba credenciales o redirige a registro
 function loginUser(event) {

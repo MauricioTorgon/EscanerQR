@@ -77,6 +77,10 @@ header h1 {
     background: #7a7979;
 }
 
+.sidebar li:empty {
+  display: none;
+}
+
 /* Estilos para las imágenes del menú */
 .menu-img {
   width: 20px; /* Ajusta según necesites */

@@ -106,9 +106,28 @@
     }
   });
   </script>
-    <!-- Botón flotante 
-     <button class="fab" id="action-button" onclick="window.location.href='formulario.html';">+</button>
-    -->
+
+  <!--Enlaces dependiendo si es admin-->
+  <script>
+  currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (currentUser) {
+    const isAdmin = currentUser.isAdmin;
+
+    // Admin: oculta enlace a "generarQR"
+    if (isAdmin) {
+      document.querySelector('a[href="generarQR.html"]').style.display = "none";
+    } else {
+      // Usuario común: oculta enlaces a "preparaQR" y "asistencias"
+      document.querySelector('a[href="preparaQR.html"]').style.display = "none";
+      document.querySelector('a[href="asistencias.html"]').style.display = "none";
+    }
+  } else {
+    // Si no hay usuario, redirigir al login
+    window.location.href = "index.html";
+  }
+  </script>
+
 </body>
 </html>
 
