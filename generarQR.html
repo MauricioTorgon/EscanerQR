@@ -38,23 +38,22 @@
     </div>
   </main>
 
-  <!-- QR Generator -->
-  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-  <script>
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const currentUser = users[users.length - 1]; // Último registrado
+<script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+<script>
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-    if (currentUser) {
-      document.getElementById('user-info').textContent = `Username: ${currentUser.username}`;
-      const qr = new QRious({
-        element: document.getElementById('qr-canvas'),
-        value: currentUser.username,
-        size: 250,
-      });
-    } else {
-      document.getElementById('user-info').textContent = "⚠️ No hay usuario registrado.";
-    }
-  </script>
+  if (currentUser) {
+    document.getElementById('user-info').textContent = `Username: ${currentUser.username}`;
+    const qr = new QRious({
+      element: document.getElementById('qr-canvas'),
+      value: currentUser.username, // Aquí se genera el QR del usuario logueado
+      size: 250,
+    });
+  } else {
+    document.getElementById('user-info').textContent = "⚠️ No hay sesión iniciada.";
+  }
+</script>
+
   
   <!-- Logout de la pagina-->
   <script>

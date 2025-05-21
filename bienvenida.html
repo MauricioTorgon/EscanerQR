@@ -43,6 +43,7 @@
     document.getElementById('logout-link').addEventListener('click', function(e) {
     e.preventDefault();
     if (confirm("¿Estás seguro de que quieres salir?")) {
+      localStorage.removeItem('currentUser');
       window.location.href = "index.html";
     }
   });

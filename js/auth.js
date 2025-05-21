@@ -42,6 +42,7 @@ function loginUser(event) {
     if (user) {
       alert(`¡Bienvenido, ${user.fullname}!`);
       window.location.href = 'bienvenida.html';
+      localStorage.setItem("currentUser", JSON.stringify(user));
     } else {
       alert('Usuario o contraseña incorrectos.');
     }
